@@ -2,6 +2,7 @@ import colors from 'constants/colors';
 import React, {useState} from 'react';
 
 import {
+  Keyboard,
   StyleSheet,
   Text,
   TextInput,
@@ -26,7 +27,12 @@ function Header({onSearch}: HeaderProps): React.JSX.Element {
           placeholder="Type to search"
           placeholderTextColor={colors.border}
         />
-        <TouchableOpacity style={styles.searchButton}>
+        <TouchableOpacity
+          style={styles.searchButton}
+          onPress={() => {
+            onSearch(search);
+            Keyboard.dismiss();
+          }}>
           <Text>Search</Text>
         </TouchableOpacity>
       </View>
