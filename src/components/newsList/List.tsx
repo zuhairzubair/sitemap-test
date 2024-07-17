@@ -8,7 +8,6 @@ type ListProps = {
 };
 
 function List({data}: ListProps): React.JSX.Element {
-  console.log(data);
   if (!data || !data?.articles?.length) {
     return (
       <View>
@@ -42,6 +41,9 @@ const styles = StyleSheet.create({
   },
   noResults: {
     color: colors.black,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   newsItem: {
     padding: 12,
